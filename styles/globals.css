@@ -15,6 +15,125 @@ a {
   box-sizing: border-box;
 }
 
+.app{
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+aside{
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  background-color: rgb(195, 252, 252);
+  padding: 60px 30px;
+}
+
+aside span{
+  font-size: 20px;
+  margin: 15px 0;
+}
+
+.home{
+  padding: 50px;
+  background-color: azure;
+  flex: 1;
+}
+
+.prev-table{
+  margin: 0 auto;
+  font-size: 20px;
+}
+
+.prev-table ul {
+  margin: 0;
+  padding: 0;
+  margin-top: 50px;
+}
+
+.keys-row{
+  background-color: blueviolet;
+  color: mintcream;
+  border-radius: 6px;
+}
+
+.product-li{
+  display: block;
+}
+
+.product-row{
+  width: 700px;
+  display: flex;
+}
+
+.product-row >* {
+  flex: 1;
+  text-align: center;
+  margin:10px;
+  cursor: pointer;
+}
+
+.product-container{
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-container h2{
+  text-align: center;
+}
+
+.product-container ul{
+  margin: 0;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.product-characteristic {
+  margin: 10px 0;
+}
+
+.product-characteristic span{
+  display: inline-block;
+  width: 120px;
+  font-weight: 500;
+}
+
+.product-characteristic input{
+  height: 30px; 
+  border-radius: 5px;
+  padding-left: 10px;
+  font-size: 15px;
+  margin-left: 20px;
+}
+
+.product-description{
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+
+.product-description textarea{
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+.order-product{
+  width: 400px;
+  display: flex;
+  margin: 10px 0;
+}
+
+.order-product span {
+  flex: 1;
+  border: 1px solid rgb(235, 235, 235);
+  text-align: center;
+  padding: 5px 0;
+}
+
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
