@@ -24,13 +24,13 @@ a {
 aside{
   display: flex;
   flex-direction: column;
-  width: 150px;
+  width: 200px;
   background-color: rgb(195, 252, 252);
   padding: 60px 30px;
 }
 
 aside span{
-  font-size: 20px;
+  font-size: 25px;
   margin: 15px 0;
 }
 
@@ -38,6 +38,17 @@ aside span{
   padding: 50px;
   background-color: azure;
   flex: 1;
+}
+
+.home h1{
+  font-size: 40px;
+}
+
+.button-section button{
+  margin-left: 50px;
+  width: 240px;
+  height: 60px;
+  font-size: 22px;
 }
 
 .prev-table{
@@ -59,6 +70,14 @@ aside span{
 
 .product-li{
   display: block;
+}
+
+.product-li :hover {
+  background-color: rgb(195, 252, 252);
+}
+
+.product-li :active {
+  background-color: rgb(147, 218, 218);
 }
 
 .product-row{
