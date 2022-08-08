@@ -1,4 +1,4 @@
-import { GetStaticPaths, NextPage } from "next"
+import { GetStaticPaths } from "next"
 import { Data } from "../../typesOrder"
 
 
