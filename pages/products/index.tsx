@@ -6,11 +6,11 @@ const Products: NextPage<{products:Data[]}> = ({products}) => {
     console.log(products)
   return(
       
-    <div className='prev-table'>
+    <div className='collection-table'>
       <h1>PRODUCTS</h1>
       <ul>
-        <li key="keys" className='product-li'>
-          <div className='product-row keys-row'>
+        <li key="keys" className='keys-li'>
+          <div className='data-row keys-row'>
             <div>PRODUCT</div>
             <div>TYPE</div>
             <div>BRAND</div>
@@ -20,9 +20,9 @@ const Products: NextPage<{products:Data[]}> = ({products}) => {
         {products.map(product => {
           const prod = product.attributes;
           return(
-            <li key={prod.productID} className='product-li'>
+            <li key={prod.productID} className='data-li'>
               <Link href={`/products/${product.id}`}>
-                <div className='product-row'>
+                <div className='data-row'>
                   <div>{prod.name}</div>
                   <div>{prod.type}</div>
                   <div>{prod.brand}</div>

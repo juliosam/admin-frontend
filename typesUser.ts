@@ -7,4 +7,20 @@ export interface RootObject {
     blocked: boolean;
     createdAt: Date;
     updatedAt: Date;
+    Adress: string;
+    orders: Orders[];
 }
+
+
+export interface Orders {
+    PurchaseDate: Date;
+    DueDate: string;
+    PO: string;
+    status: string;
+    createdAt: Date;
+    updatedAt: Date;
+    publishedAt: Date;
+    clientMail: string;
+    Adress: string;
+}
+

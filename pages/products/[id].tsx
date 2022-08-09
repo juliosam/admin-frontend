@@ -6,24 +6,24 @@ const singleProduct = ({product}:{product:Data}) => {
   console.log(product)
   const prod = product.attributes
   return(
-    <div className="product-container">
+    <div className="item-container">
       <h2>Product Characteristics</h2>
-      <div className="product-characteristic">
+      <div className="item-characteristic">
         <span>Denomination</span><input value={prod.name} readOnly/>
       </div>
-      <div className="product-characteristic">
+      <div className="item-characteristic">
         <span>Type</span><input value={prod.type} readOnly/>
       </div>
-      <div className="product-characteristic">
+      <div className="item-characteristic">
         <span>Brand</span><input value={prod.brand} readOnly/>
       </div>
-      <div className="product-characteristic">
+      <div className="item-characteristic">
         <span>Serial Number</span><input value={prod.productID} readOnly/>
       </div>
-      <div className="product-characteristic">
+      <div className="item-characteristic">
         <span>Price</span><input value={`$   ${prod.Price}.00`} readOnly/>
       </div>
-      <div className="product-description">
+      <div className="item-description">
         <span>Description</span>
         <textarea rows={12} cols={25} value={prod.Description} readOnly />
       </div>

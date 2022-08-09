@@ -7,30 +7,40 @@ const singleProduct = ({order}:{order:Data}) => {
   const po = order.attributes
   const prods = order.attributes.products.data
   return(
-    <div className="product-container">
+    <div className="item-container">
       <h2>Order Details</h2>
-      <div className="product-characteristic">
+      <div className="item-characteristic">
         <span>Purchase Order</span><input value={po.PO} readOnly/>
       </div>
-      <div className="product-characteristic">
+      <div className="item-characteristic">
         <span>Status</span><input value={po.status} readOnly/>
       </div>
-      <div className="product-characteristic">
+      <div className="item-characteristic">
         <span>Purchase Date</span><input value={`${po.PurchaseDate}`} readOnly/>
       </div>
-      <div className="product-characteristic">
+      <div className="item-characteristic">
         <span>Due Date</span><input value={`${po.DueDate}`} readOnly/>
       </div>
-      <div className="product-characteristic">
+      <div className="item-characteristic">
         <span>Send to</span><input value={po.Adress} readOnly/>
       </div>
-      <div className="product-characteristic">
+      <div className="item-characteristic">
         <span>Client email</span><input value={po.clientMail} readOnly/>
       </div>
       <ul>
+        <li className='item-rel-item' style={{
+          fontWeight: 900, fontSize: '18px', paddingLeft: '20px'
+          }}><h3>Order List</h3>
+        </li>
+        <li className='item-rel-item' style={{fontWeight: 700, fontSize: '15px'}}>
+          <span>PRODUCT</span>
+          <span>TYPE</span>
+          <span>BRAND</span>
+          <span>PRICE</span>
+        </li>
         {prods.map(prod =>{
           return (
-            <li key={prod.id} className='order-product'>
+            <li key={prod.id} className='item-rel-item'>
               <span>{prod.attributes.name}</span>
               <span>{prod.attributes.type}</span>
               <span>{prod.attributes.brand}</span>
