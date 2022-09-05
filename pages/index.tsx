@@ -16,7 +16,7 @@ const Home: NextPage = () => {
             Products
           </Button>
         </Link>
-        <Link href={`/users/`}>
+        <Link href={`/usersAuth/`}>
           <Button variant="contained" endIcon={< PersonIcon sx={{width: 30, height:30}}/>}>
             Users
           </Button>

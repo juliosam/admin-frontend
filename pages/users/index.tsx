@@ -1,45 +1,25 @@
-import type { GetStaticProps, NextPage } from 'next'
-import Link from 'next/link'
-import { RootObject } from '../../typesUser'
+import { Box } from "@mui/material"
 
-const Users: NextPage<{users:RootObject[]}> = ({users}) => {
-    console.log(users)
-  return(
-    <div className='collection-table'>
-      <h1>USERS</h1>
-      <ul>
-        <li key="keys" className='keys-li'>
-          <div className='data-row keys-row'>
-            <div>ID</div>
-            <div>NAME</div>
-            <div>EMAIL</div>
-          </div>
-        </li>
-        {users.map(user => {
-          return(
-            <li key={user.id} className='data-li'>
-              <Link href={`/users/${user.id}`}>
-                <div className='data-row'>
-                  <div>{user.id}</div>
-                  <div>{user.username}</div>
-                  <div>{user.email}</div>
-                </div>
-              </Link>
-            </li>
-          )
-        })}
-      </ul>
-    </div>
+const UsersBlocked= () => {
+  return (
+    <>
+     <Box>
+       <Box>
+         <p>Users</p>
+       </Box>
+     </Box>
+    </>
   )
 }
-export default Users
 
-export const getStaticProps = async () => {
-  const res = await fetch('http://localhost:1337/api/users');
-  const data = await res.json();
+// const {publicRuntimeConfig} = getConfig();
+
+export async function getServerSideProps(params:any) {
+
   return{
     props:{
-      users: data
     }
   }
 }
+
+export default UsersBlocked
