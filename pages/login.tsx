@@ -1,12 +1,14 @@
 import { Box } from "@mui/material";
 import { useState } from "react";
+import { setCookie } from 'nookies'
+import Router from 'next/router'
 
 function Login(){
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   
-  const handleLogin = async () => {
+  const handleLogin = async (e:any) => {
 
     const loginInfo = {
       identifier: email,
@@ -25,7 +27,13 @@ function Login(){
     const loginResponse = await login.json();
 
     console.log(loginResponse)
-    debugger
+
+    setCookie(null, 'jwt', loginResponse.jwt , {
+      maxAge: 30 * 24 * 60 * 60,
+      path: '/',
+    })
+
+    Router.push('/usersAuth')
   }
 
   console.log('still good')
@@ -36,10 +44,10 @@ function Login(){
         <Box>
            You need an Authorized account ti acced this Page
         </Box>
-        <form>
+        <form onSubmit={e => handleLogin(e)}>
           <input type="email" onChange={e => setEmail(e.target.value)} value={email}/><br/>
           <input type="password" onChange={e => setPassword(e.target.value)} value={password}/>
-          <button onClick={() => handleLogin()}>Login</button>
+          <button>Login</button>
         </form>
       </Box>
     </>

@@ -15,8 +15,6 @@ const UsersAuth= ({users, authData}:any) => {
   )
 }
 
-// const {publicRuntimeConfig} = getConfig();
-
 export async function getServerSideProps(params:any) {
 
   const loginInfo = {
@@ -35,12 +33,12 @@ export async function getServerSideProps(params:any) {
 
   const loginResponse = await login.json()
 
-    const res = await fetch('http://localhost:1337/api/users', {
-      headers: {
-        Authorization: `Bearer ${loginResponse.jwt}`
-      }
-    })
-    const users = await res.json()
+  const res = await fetch('http://localhost:1337/api/users', {
+    headers: {
+      Authorization: `Bearer ${loginResponse.jwt}`
+    }
+  })
+  const users = await res.json()
 
   return{
     props:{
