@@ -4,10 +4,13 @@ import SideNav from '../components/sideNav'
 import Router from 'next/router'
 import {parseCookies} from 'nookies'
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps, navigation }: any) {
+  // type AppProps  no funciono con navigation
+  console.log(navigation)
+
   return (
     <div className='app'>
-      <SideNav/>
+      <SideNav navigation={navigation}/>
       <Component {...pageProps} />
     </div>
   )

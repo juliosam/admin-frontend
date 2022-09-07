@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import { useState } from "react";
-import { setCookie } from 'nookies'
-import Router from 'next/router'
+import { setCookie } from 'nookies';
+import { useRouter } from "next/router";
 
 function Login(){
 
@@ -33,7 +33,9 @@ function Login(){
       path: '/',
     })
 
-    Router.push('/usersAuth')
+    const router = useRouter()
+
+    router.push('/usersAuth')
   }
 
   console.log('still good')
